@@ -1,1 +1,1 @@
-from webapp.views.topics import CreateTopic, TopicsList
+from webapp.views.topics import CreateTopic, TopicsList, TopicDetail
