@@ -1,0 +1,52 @@
+[
+{
+    "model": "webapp.topic",
+    "pk": 1,
+    "fields": {
+        "created_at": "2025-10-23T21:39:01.270Z",
+        "updated_at": "2025-10-23T21:39:01.270Z",
+        "topic": "тема",
+        "content": "ее содержимое"
+    }
+},
+{
+    "model": "webapp.topic",
+    "pk": 2,
+    "fields": {
+        "created_at": "2025-10-23T21:42:18.919Z",
+        "updated_at": "2025-10-23T21:42:18.919Z",
+        "topic": "тема",
+        "content": "ее содержимое"
+    }
+},
+{
+    "model": "webapp.topic",
+    "pk": 3,
+    "fields": {
+        "created_at": "2025-10-23T21:42:24.802Z",
+        "updated_at": "2025-10-23T21:42:24.802Z",
+        "topic": "тема",
+        "content": "ее содержимое"
+    }
+},
+{
+    "model": "webapp.topic",
+    "pk": 4,
+    "fields": {
+        "created_at": "2025-10-23T21:43:44.693Z",
+        "updated_at": "2025-10-23T21:43:44.693Z",
+        "topic": "тема",
+        "content": "ее содержимое"
+    }
+},
+{
+    "model": "webapp.topic",
+    "pk": 5,
+    "fields": {
+        "created_at": "2025-10-23T21:55:07.614Z",
+        "updated_at": "2025-10-23T21:55:07.614Z",
+        "topic": "лампа",
+        "content": "винтажная, старинная, где купить"
+    }
+}
+]
