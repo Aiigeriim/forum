@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Главная</title>
+{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+        {% for topic in topics %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ topic.pk }}</th>
+      <td>{{ topic.topic }}</td>
+      <td>{{ topic.created_at }}</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+    {% empty %}
+        Темы еще не добавлены
+    {% endfor %}
+</table>
+
+
+{% endblock %}
