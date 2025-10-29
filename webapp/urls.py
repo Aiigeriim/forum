@@ -6,7 +6,7 @@ app_name = "webapp"
 
 urlpatterns = [
     path('topic/add/', CreateTopic.as_view(), name="topic_add"),
-    path('topics/list/', TopicsList.as_view(), name="topics_list"),
+    path('', TopicsList.as_view(), name="topics_list"),
     path('topic/<int:pk>/', TopicDetail.as_view(), name="topic_view"),
     path('topic/<int:pk>/add-answer/', AnswerAdd.as_view(), name="add_answer"),
     # path('post/<int:pk>/delete/', PostDelete.as_view(), name="post_delete"),

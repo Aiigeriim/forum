@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Регистрация</title>
+{% endblock %}
+
+{% block content %}
+    <h5>Регистрация</h5>
+    <div class="container" style="text-align: center">
+        {% include 'partial/form.html' with btn_text='Зарегистрироваться'%}
+    </div>
+
+{% endblock %}

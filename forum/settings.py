@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
+    'accounts',
 
 ]
 
@@ -133,3 +134,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.MyUser'
+
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'
+
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'webapp:topics_list'
+LOGOUT_REDIRECT_URL = 'accounts:login'
