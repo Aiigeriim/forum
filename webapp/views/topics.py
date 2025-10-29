@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView
 
-from webapp.forms.topics import TopicForm
+from webapp.forms import TopicForm
 from webapp.models import Topic
 
 
@@ -16,12 +16,13 @@ class TopicsList(ListView):
     context_object_name = 'topics'
     template_name = 'topics/topics_list.html'
     ordering = '-created_at'
+    paginate_by = 2
 
 
 class TopicDetail(DetailView):
     model = Topic
     template_name = 'topics/topic_detail.html'
-    queryset = Topic.objects.all()
+
 
 
 

@@ -5,32 +5,26 @@
 {% endblock %}
 
 {% block content %}
-    {% for t in topics %}
- <a href="{% url 'webapp:topic_view' t.pk  %}" style="text-decoration: #1b1b1b">
-  {% endfor %}
-    <table class="table" >
-  <thead aria-disabled="true">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Тема</th>
-      <th scope="col">Дата создания</th>
-      <th scope="col">Автор</th>
-    </tr>
-  </thead>
-        {% for topic in topics %}
-            <tbody>
-                <tr>
-                  <th scope="row">{{ topic.pk }}</th>
-                  <td>{{ topic.topic }}</td>
-                  <td>{{ topic.created_at }}</td>
-                  <td>@mdo</td>
-                </tr>
-          </tbody>
+    <h5 style="text-align: center">Темы</h5>
+    {% for topic in topics %}
+       <a style="text-decoration: none" href="{% url 'webapp:topic_view' topic.pk %}">
+            <table class="table" >
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{ topic.pk }}</th>
+                            <td>{{ topic.topic }}</td>
+                            <td>{{ topic.created_at }}</td>
+                            <td>@mdo</td>
+                            <td>Ответов {{ topic.answers.count }}</td>
+                        </tr>
+                  </tbody>
+            </table>
+       </a>
     {% empty %}
         Темы еще не добавлены
     {% endfor %}
-</table>
-     </a>
 
-
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
 {% endblock %}
