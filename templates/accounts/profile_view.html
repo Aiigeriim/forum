@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4 align-middle d-flex w-50  justify-content-between" style="">
+                <img src="{{ user_obj.avatar.url }}" class="img-fluid" style="max-width: 200px;" alt="...">
+                <h6 class="card-title">{{ user_obj.username}}</h6>
+
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p>Комментариев {{ user_obj.answers.count }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% for topic in user_obj.topics.all %}
+    <div class="list-group">
+        <a href="{% url 'webapp:topic_view' topic.pk %}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-70 justify-content-between">
+                <h5 class="mb-1">{{ topic.topic }}</h5>
+                <small class="text-body-secondary">{{ topic.created_at }}</small>
+            </div>
+            <small class="text-body-secondary">Ответов - {{ topic.answers.count }}</small>
+        </a>
+    </div>
+{% empty %}
+    Темы еще не добавлены
+{% endfor %}
+
+
+
+
+
+
+
+
+{#    <div class="card-group d-flex flex-column" style="width: auto" >#}
+{##}
+{#            <div class="card" style="max-width: 18rem;">#}
+{#                <a href="{% url 'webapp:topic_view'  topic.pk %}">{{ topic.topic }}</a>#}
+{#            </div>#}
+{##}
+{#    </div>#}
+{% endblock %}

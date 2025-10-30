@@ -6,12 +6,39 @@
 {% block content %}
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title">{{ topic.pk }} - {{ topic.topic }}</h5>
+        <h5 class="card-title">{{ topic.topic }}</h5>
         <p class="card-text">{{ topic.content}}</p>
-          <small class="text-body-secondary">{{ topic.created_at }}</small>
-          <small class="text-body-secondary">@mdo</small>
+          <p class="text-body-secondary">{{ topic.created_at }}</p>
+          <a href="{% url 'accounts:profile' topic.author.pk %}"><p class="text-body-secondary">{{ topic.author }}</p></a>
         <a href="{% url 'webapp:add_answer' topic.pk %}" class="btn btn-primary">Ответить</a>
       </div>
     </div>
-    {% include 'partial/answers_list.html' %}
+
+    <div class="container mt-3">
+        <div class="list-group">
+            {% for answer in answers %}
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ answer.author.avatar.url }}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <a href="{% url 'accounts:profile' answer.author.pk %}"><h5 class="card-title">{{ answer.author }}</h5></a>
+                                <p class="card-text">{{ answer.answer }}</p>
+                                <p class="card-text"><small class="text-body-secondary">{{ answer.created_at }}</small></p>
+                                <a href="{% url 'webapp:update_answer' answer.pk %}" title="Редактировать"><i class="bi bi-pencil"></i></a>
+                                <a href="{% url 'webapp:delete_answer' answer.pk %}" title="Удалить"><i class="bi bi-trash3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% empty %}
+                Ответов пока нет
+            {% endfor %}
+                {% include 'partial/pagination.html' %}
+        </div>
+    </div>
+
 {% endblock %}

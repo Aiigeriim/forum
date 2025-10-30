@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model, login
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accounts.forms import MyUserCreationForm
 
@@ -15,5 +15,10 @@ class RegisterView(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect(reverse('webapp:topics_list'))
+
+class ProfileView(DetailView):
+    template_name = 'accounts/profile_view.html'
+    model = get_user_model()
+    context_object_name = 'user_obj'
 
 
