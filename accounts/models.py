@@ -4,6 +4,7 @@ from django.urls import reverse
 
 
 class MyUser(AbstractUser):
+    REQUIRED_FIELDS = [ 'password', 'avatar']
     avatar = models.ImageField(upload_to="avatars", verbose_name='Аватар')
 
     def __str__(self):

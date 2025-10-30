@@ -30,11 +30,6 @@ class AnswerUpdate(PermissionRequiredMixin, UpdateView):
     model = Answer
     permission_required = 'webapp.change_answer'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        topic = get_object_or_404(Topic, pk=self.kwargs['pk'])
-        context['topic.pk'] = topic.pk
-        return context
 
     def has_permission(self):
         answer = get_object_or_404(Answer, pk=self.kwargs['pk'])

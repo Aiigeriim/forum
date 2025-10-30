@@ -6,7 +6,8 @@
         "created_at": "2025-10-23T21:39:01.270Z",
         "updated_at": "2025-10-23T21:39:01.270Z",
         "topic": "тема",
-        "content": "ее содержимое"
+        "content": "ее содержимое",
+        "author": 1
     }
 },
 {
@@ -16,7 +17,8 @@
         "created_at": "2025-10-23T21:42:18.919Z",
         "updated_at": "2025-10-23T21:42:18.919Z",
         "topic": "тема",
-        "content": "ее содержимое"
+        "content": "ее содержимое",
+        "author": 1
     }
 },
 {
@@ -26,7 +28,8 @@
         "created_at": "2025-10-23T21:42:24.802Z",
         "updated_at": "2025-10-23T21:42:24.802Z",
         "topic": "тема",
-        "content": "ее содержимое"
+        "content": "ее содержимое",
+        "author": 1
     }
 },
 {
@@ -36,7 +39,8 @@
         "created_at": "2025-10-23T21:43:44.693Z",
         "updated_at": "2025-10-23T21:43:44.693Z",
         "topic": "тема",
-        "content": "ее содержимое"
+        "content": "ее содержимое",
+        "author": 1
     }
 },
 {
@@ -44,9 +48,87 @@
     "pk": 5,
     "fields": {
         "created_at": "2025-10-23T21:55:07.614Z",
-        "updated_at": "2025-10-23T21:55:07.614Z",
+        "updated_at": "2025-10-30T21:19:27.208Z",
         "topic": "лампа",
-        "content": "винтажная, старинная, где купить"
+        "content": "винтажная, старинная, где купить  nnbhb",
+        "author": 1
+    }
+},
+{
+    "model": "webapp.topic",
+    "pk": 8,
+    "fields": {
+        "created_at": "2025-10-30T21:04:29.489Z",
+        "updated_at": "2025-10-30T21:10:29.926Z",
+        "topic": "moder",
+        "content": "kmn.lkmnlk",
+        "author": 6
+    }
+},
+{
+    "model": "webapp.answer",
+    "pk": 1,
+    "fields": {
+        "created_at": "2025-10-29T22:54:34.869Z",
+        "updated_at": "2025-10-30T21:18:54.512Z",
+        "answer": "винтаж, барокко. jkj junhljnhk kjnkjn dfkjgdlfgred",
+        "topic": 5,
+        "author": 1
+    }
+},
+{
+    "model": "webapp.answer",
+    "pk": 2,
+    "fields": {
+        "created_at": "2025-10-29T23:23:38.293Z",
+        "updated_at": "2025-10-29T23:23:38.293Z",
+        "answer": "ответ добавлен",
+        "topic": 2,
+        "author": 2
+    }
+},
+{
+    "model": "webapp.answer",
+    "pk": 5,
+    "fields": {
+        "created_at": "2025-10-30T19:13:14.257Z",
+        "updated_at": "2025-10-30T21:19:50.403Z",
+        "answer": "rlikjm,fl;gtrmnfb mbnkjnkj",
+        "topic": 5,
+        "author": 1
+    }
+},
+{
+    "model": "webapp.answer",
+    "pk": 7,
+    "fields": {
+        "created_at": "2025-10-30T20:06:01.145Z",
+        "updated_at": "2025-10-30T20:06:01.145Z",
+        "answer": "ljghvb nm,.;lkjhbbn m,",
+        "topic": 5,
+        "author": 5
+    }
+},
+{
+    "model": "webapp.answer",
+    "pk": 9,
+    "fields": {
+        "created_at": "2025-10-30T20:41:29.927Z",
+        "updated_at": "2025-10-30T20:41:39.451Z",
+        "answer": "lknmlknljknklmlkmnkln",
+        "topic": 1,
+        "author": 5
+    }
+},
+{
+    "model": "webapp.answer",
+    "pk": 10,
+    "fields": {
+        "created_at": "2025-10-30T21:08:26.405Z",
+        "updated_at": "2025-10-30T21:10:19.831Z",
+        "answer": "lknlkml;ml moder",
+        "topic": 8,
+        "author": 6
     }
 }
 ]
