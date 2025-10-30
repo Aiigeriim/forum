@@ -1,6 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core import paginator
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic.list import MultipleObjectMixin
 
 from webapp.forms import TopicForm
 from webapp.models import Topic
@@ -24,13 +27,18 @@ class TopicsList(ListView):
     paginate_by = 2
 
 
-class TopicDetail(DetailView):
+class TopicDetail(DetailView, MultipleObjectMixin):
     model = Topic
     template_name = 'topics/topic_detail.html'
+    paginate_by = 2
+
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["answers"] = self.object.answers.order_by('created_at')
+        topic = get_object_or_404(Topic, pk=self.kwargs['pk'])
+        object_list = topic.answers.all()
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        print(context)
+
         return context
 
 
