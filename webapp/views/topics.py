@@ -1,8 +1,8 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core import paginator
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.views.generic.list import MultipleObjectMixin
 
 from webapp.forms import TopicForm
@@ -37,10 +37,29 @@ class TopicDetail(DetailView, MultipleObjectMixin):
         topic = get_object_or_404(Topic, pk=self.kwargs['pk'])
         object_list = topic.answers.all()
         context = super().get_context_data(object_list=object_list, **kwargs)
-        print(context)
-
         return context
 
 
+class TopicUpdate(PermissionRequiredMixin, UpdateView):
+    template_name = 'topics/topic_update.html'
+    model = Topic
+    form_class = TopicForm
+    permission_required = 'webapp.change_topic'
+
+    def has_permission(self):
+        topic = get_object_or_404(Topic, pk=self.kwargs['pk'])
+        return super().has_permission() or topic.author == self.request.user
+
+
+
+class TopicDelete(PermissionRequiredMixin, DeleteView):
+    template_name = 'topics/topic_delete.html'
+    model = Topic
+    permission_required = 'webapp.delete_topic'
+    success_url = reverse_lazy('webapp:topics_list')
+
+    def has_permission(self):
+        topic = get_object_or_404(Topic, pk=self.kwargs['pk'])
+        return super().has_permission() or topic.author == self.request.user
 
 
