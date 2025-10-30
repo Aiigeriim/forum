@@ -15,44 +15,43 @@
 <body>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'webapp:topics_list' %}">Главная</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'webapp:topic_add' %}">Добавить тему</a>
-        </li>
-      </ul>
-      <form class="d-flex me-auto" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-        <ul class="navbar-nav me-3 mb-2 mb-lg-0">
-            {% if user.is_authenticated %}
-                <form action="{% url 'accounts:logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit" class="btn nav-link active">Выйти</button>
-                </form>
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link active" aria-current="page" href="{% url 'accounts:logout' %}">Выход</a>#}
-{#                </li>#}
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'webapp:topics_list' %}">Главная</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="">Личный кабинет</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'webapp:topic_add' %}">Добавить тему</a>
                 </li>
+                {% endif %}
+            </ul>
+            <form class="d-flex me-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
+                    <form action="{% url 'accounts:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn nav-link active">Выйти</button>
+                    </form>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:profile' request.user.pk %}">Личный кабинет</a>
+                    </li>
                 {% else %}
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'accounts:login' %}">Вход</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'accounts:registration' %}">Регистрация</a>
-                </li>
-            {% endif %}
-        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:login' %}">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:registration' %}">Регистрация</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 {% block nav %}

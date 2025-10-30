@@ -11,10 +11,9 @@
             <table class="table" >
                     <tbody>
                         <tr>
-                            <th scope="row">{{ topic.pk }}</th>
-                            <td>{{ topic.topic }}</td>
+                            <th>{{ topic.topic }}</th>
                             <td>{{ topic.created_at }}</td>
-                            <td>@mdo</td>
+                            <td>{{ topic.author }}</td>
                             <td>Ответов {{ topic.answers.count }}</td>
                         </tr>
                   </tbody>

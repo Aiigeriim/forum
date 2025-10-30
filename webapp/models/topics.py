@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 from webapp.models import BaseCreateUpdateModel
@@ -6,6 +7,7 @@ from webapp.models import BaseCreateUpdateModel
 class Topic(BaseCreateUpdateModel):
     topic = models.CharField(verbose_name='Название', max_length=100)
     content = models.TextField(verbose_name='Содержимое')
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='topics',verbose_name='Автор')
 
     class Meta:
         db_table = 'topics'
