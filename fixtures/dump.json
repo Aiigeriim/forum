@@ -66,12 +66,23 @@
     }
 },
 {
+    "model": "webapp.topic",
+    "pk": 9,
+    "fields": {
+        "created_at": "2025-11-02T12:31:22.495Z",
+        "updated_at": "2025-11-02T12:31:22.495Z",
+        "topic": "l;ekmglkemrg",
+        "content": "elrkgme;rg",
+        "author": 1
+    }
+},
+{
     "model": "webapp.answer",
     "pk": 1,
     "fields": {
         "created_at": "2025-10-29T22:54:34.869Z",
-        "updated_at": "2025-10-30T21:18:54.512Z",
-        "answer": "винтаж, барокко. jkj junhljnhk kjnkjn dfkjgdlfgred",
+        "updated_at": "2025-11-02T12:31:48.404Z",
+        "answer": "винтаж, барокко. jkj junhljnhk kjnkjn dfkjgdlfgred ejofeijgr",
         "topic": 5,
         "author": 1
     }

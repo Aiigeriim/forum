@@ -8,8 +8,6 @@ from webapp.models import Answer, Topic
 
 class AnswerAdd(LoginRequiredMixin, CreateView):
     form_class = AnswerForm
-    template_name = 'answers/answer_create.html'
-
 
     def form_valid(self, form, *args, **kwargs):
         topic = get_object_or_404(Topic, pk=self.kwargs['pk'])

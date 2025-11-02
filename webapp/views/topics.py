@@ -1,11 +1,13 @@
+
+
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.core import paginator
+
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.views.generic.list import MultipleObjectMixin
 
-from webapp.forms import TopicForm
+from webapp.forms import TopicForm, AnswerForm
 from webapp.models import Topic
 
 
@@ -36,8 +38,14 @@ class TopicDetail(DetailView, MultipleObjectMixin):
     def get_context_data(self, **kwargs):
         topic = get_object_or_404(Topic, pk=self.kwargs['pk'])
         object_list = topic.answers.all()
+        answer_form = self.get_answer_form(self.request)
         context = super().get_context_data(object_list=object_list, **kwargs)
+        context['answer_form'] = answer_form['answer_form']
         return context
+
+    def get_answer_form(self, request):
+        return {'answer_form': AnswerForm(request.GET)}
+
 
 
 class TopicUpdate(PermissionRequiredMixin, UpdateView):
