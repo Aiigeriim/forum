@@ -15,5 +15,3 @@ class MyUser(AbstractUser):
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
 
-    # def get_absolute_url(self):
-    #     return reverse("webapp:topics_list")

@@ -12,12 +12,5 @@ urlpatterns = [
     path('topic/<int:pk>/delete/', TopicDelete.as_view(), name="topic_delete"),
     path('topic/<int:pk>/add-answer/', AnswerAdd.as_view(), name="add_answer"),
     path('answer/<int:pk>/delete/', AnswerDelete.as_view(), name="delete_answer"),
-
     path('answer/<int:pk>/update/', AnswerUpdate.as_view(), name="update_answer"),
-    # path('topic/<int:pk>/answer/<int:pk>/update/', AnswerUpdate.as_view(), name="update_answer"),
-
-
-
-
-
 ]

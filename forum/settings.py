@@ -142,4 +142,4 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'webapp:topics_list'
-LOGOUT_REDIRECT_URL = 'accounts:login'
+LOGOUT_REDIRECT_URL = 'webapp:topics_list'
