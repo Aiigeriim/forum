@@ -1,0 +1,131 @@
+[
+{
+    "model": "accounts.myuser",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$Np93htkpCmADO7QCQZy10f$B5FXQrznDhPrUQ0F29PpGYUMvENLuXxYBy2b7qTxDdE=",
+        "last_login": "2025-10-30T21:18:08.542Z",
+        "is_superuser": false,
+        "username": "bob",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-29T22:15:51.428Z",
+        "avatar": "avatars/istockphoto-1436913463-612x612.jpg",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.myuser",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$Zge8W99NFklebUgfg0Kqdl$AIhcX2zqwf6539/lYiCf3g6egQU70ogw/MSLGuc72k4=",
+        "last_login": "2025-10-29T23:23:22.755Z",
+        "is_superuser": false,
+        "username": "asus",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-29T22:18:02.290Z",
+        "avatar": "avatars/depositphotos_215725164-stock-photo-woman-surfboard-ride-wave-woman.jpg",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.myuser",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$X4LD6qTQ2J10O2usH3iKha$jWT7EW3TwFZzfnMWWQmhexwUcy7+UrKl247EIQkcN58=",
+        "last_login": "2025-10-29T22:20:09.236Z",
+        "is_superuser": false,
+        "username": "love",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-29T22:20:08.152Z",
+        "avatar": "avatars/serfing-devushki.jpg",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.myuser",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$Q7nxHID8jlyVAnnolwRHje$Qmzg9UaTGS1fChARJf8t5Xh9CpCC06X9D0b77X8OjNU=",
+        "last_login": "2025-10-30T20:39:27.944Z",
+        "is_superuser": false,
+        "username": "milk",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-30T20:02:41.800Z",
+        "avatar": "avatars/sport-serfing-devushka-volna-1218890.jpg",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.myuser",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$D0I9dFFyJxM4ZXCPvBtUnd$lVLLpBrho9ZakuvreMwIpqZXROeSHNP2Bmn3RxaMLhg=",
+        "last_login": "2025-10-30T21:09:27.877Z",
+        "is_superuser": true,
+        "username": "super",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-10-30T20:55:51.498Z",
+        "avatar": "avatars/tmb_53420_4663.jpg",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.myuser",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$RUWC5lJasQwecyd1YGiaoz$izeLxfwDy4wEOAwdMw8ke7aJcVdFdH43JUlOw0o6gSg=",
+        "last_login": "2025-10-30T21:09:00Z",
+        "is_superuser": false,
+        "username": "moder",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-30T21:08:58Z",
+        "avatar": "avatars/serfing-devushki_63gPG2R.jpg",
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "moderators",
+        "permissions": [
+            26,
+            27,
+            22,
+            23
+        ]
+    }
+}
+]
